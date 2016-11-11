@@ -5,7 +5,7 @@ function Pit(viking1, viking2) {
   this.viking1 = viking1;
   this.viking2 = viking2;
   this.fight = function() {
-    var i=0;
+    var i=1;
     while (i <= this.totalRounds && (this.viking1.health > 0) && (this.viking2.health > 0)) {
       this.viking1.health = this.viking1.health-this.viking2.strength;
       this.viking2.health = this.viking2.health-this.viking1.strength;
@@ -17,6 +17,11 @@ function Pit(viking1, viking2) {
     if ((this.viking1.health < this.viking2.strength) || (this.viking2.health < this.viking1.strength)) {
       break;
     }
+  }
+  if (this.viking1.health > this.viking2.health) {
+    console.log('\x1b[32m', this.viking1.name + " won in round "+ (i-1) +"!!!",'\x1b[0m');
+  } else {
+    console.log('\x1b[32m', this.viking2.name + " won in round "+ (i-1) +"!!!",'\x1b[0m');
   }
 };
 }

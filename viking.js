@@ -9,5 +9,4 @@ Viking.prototype.status = function(){
   console.log(this.name + " is " + this.health + "% of health and " + this.strength + " of strength.");
 };
 
-
 module.exports = Viking;
